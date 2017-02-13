@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.supafree.SupaFreeFragment">
+
+    <com.moffcomm.supatem.ui.misc.BetterViewAnimator
+        android:id="@+id/supadeal_animator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out">
+
+        <RelativeLayout
+            android:id="@+id/supadeal_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="48dp">
+
+            <ImageView
+                android:id="@+id/supadeal_loading_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="32dp"
+                android:clickable="true"
+                android:scaleType="center"
+                android:src="@drawable/loading" />
+
+            <TextView
+                android:id="@+id/supadeal_loading_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/supadeal_loading_image"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="@string/loading_message" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/supadeal_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="48dp">
+
+            <ImageView
+                android:id="@+id/supadeal_error_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/error" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/supadeal_error_image"
+                android:gravity="center_horizontal"
+                android:text="@string/error_title"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/supadeal_error_image"
+                android:gravity="center_horizontal"
+                android:text="@string/error_message" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/supadeal_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="48dp">
+
+            <ImageView
+                android:id="@+id/supadeal_empty_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/empty" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/supadeal_empty_image"
+                android:gravity="center_horizontal"
+                android:text="@string/empty_title"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/supadeal_empty_image"
+                android:gravity="center_horizontal"
+                android:text="@string/empty_message" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/supadeal_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/supadeal_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </com.moffcomm.supatem.ui.misc.BetterViewAnimator>
+
+</LinearLayout>
